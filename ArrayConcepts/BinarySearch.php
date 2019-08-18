@@ -3,15 +3,14 @@
 
 namespace InterviewCamp\ArrayConcepts;
 
-$input = [1,2,3,4,5,6,7,8];
-$target = 0;
+$input = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 5, 6, 7, 8];
+$target = 3;
 
 $search = new BinarySearch();
 
-$result = $search->binarySearch($input, $target);
+$result = $search->findFirstMatch($input, $target);
 
-if ($result >= 0)
-{
+if ($result >= 0) {
     print "\nTarget found at index: {$result}\n";
 } else {
     print "\nTarget not found in array\n";
@@ -42,6 +41,31 @@ class BinarySearch
                 $start = $mid_index + 1;
             } else {
                 $end = $mid_index - 1;
+            }
+        }
+
+        // $target not found
+        return -1;
+    }
+
+    public function findFirstMatch(array $values, int $target): int
+    {
+        $start = 0;
+        $end = count($values) - 1;
+
+        while ($start <= $end) {
+            $mid_index = $this->getMidpointIndex($start, $end);
+            $middle_value = $values[$mid_index];
+
+            if ($middle_value < $target) {
+                $start = $mid_index + 1;
+            } elseif (
+                $middle_value > $target
+                || ($middle_value == $target && $mid_index > 0 && $values[$mid_index - 1] == $target)
+            ) {
+                $end = $mid_index - 1;
+            } else {
+                return $mid_index;
             }
         }
 
