@@ -1,4 +1,8 @@
 <?php
+
+namespace InterviewCamp\ArrayConcepts;
+
+
 // EASY problem
 $input = [2, 3, 0, 3, 0, 1, 0, 2, 3, 0, 3, 0, 1, 0, 2, 3, 0, 3, 0, 1, 0, 2, 3, 0, 3, 0, 1, 0];
 $sorter = new ZeroSorter($input);

@@ -1,5 +1,7 @@
 <?php
 
+namespace InterviewCamp\ArrayConcepts;
+
 // PROBLEM: given an input number, rearrange the digits to produce the minimum larger number
 
 $input = 653421;

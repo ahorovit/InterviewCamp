@@ -1,5 +1,8 @@
 <?php
 
+namespace InterviewCamp\ArrayConcepts;
+
+
 $finder = new SubarraySumFinder();
 
 // MAX contiguous subarray

@@ -1,5 +1,8 @@
 <?php
 
+namespace InterviewCamp\ArrayConcepts;
+
+
 $input = [1, 12, 8, 6, 5, 7, 10];
 $input = [1, 12, 8, 6, 5, 7, 10];
 $sorter = new SubArraySorter($input);
