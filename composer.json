@@ -1,0 +1,11 @@
+{
+    "name": "adin/interview-camp",
+    "description": "InterviewCamp Exercises and related practics",
+    "authors": [
+        {
+            "name": "Adin Horovitz",
+            "email": "adin@tapclicks.com"
+        }
+    ],
+    "require": {}
+}
