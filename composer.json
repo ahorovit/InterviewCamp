@@ -10,7 +10,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "InterviewCamp\\ArrayConcepts\\": "ArrayConcepts"
+            "InterviewCamp\\ArrayConcepts\\": "ArrayConcepts",
+            "InterviewCamp\\LinkedList\\": "LinkedList"
         }
     }
 }
