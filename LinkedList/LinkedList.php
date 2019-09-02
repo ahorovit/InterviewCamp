@@ -15,7 +15,7 @@ class LinkedList
 
     public function append(Node $tail): LinkedList
     {
-        if ($this->isEmpty()) {
+        if ($this->empty()) {
             $this->head = $tail;
         } else {
             $this->tail->setNext($tail);
@@ -26,10 +26,31 @@ class LinkedList
         return $this;
     }
 
-    public function appendList(LinkedList $list) : LinkedList
+    public function delete(Node $toDelete)
     {
-        if (!$list->isEmpty())
-        {
+        $prev = $toDelete->getPrev();
+
+        if (is_null($toDelete)) {
+            return;
+        }
+
+        if ($toDelete === $this->getHead()) {
+            $this->setHead($toDelete->getNext());
+        }
+
+        if ($toDelete === $this->getTail()) {
+            $this->setTail($prev);
+            $prev->setNext(null);
+        }
+
+        if (!is_null($prev)) {
+            $prev->setNext($toDelete->getNext());
+        }
+    }
+
+    public function appendList(LinkedList $list): LinkedList
+    {
+        if (!$list->empty()) {
             $this->tail->setNext($list->getHead());
             $this->tail = $list->getTail();
         }
@@ -61,8 +82,7 @@ class LinkedList
 
     public function buildFromArray(array $data): LinkedList
     {
-        foreach($data as $node_value)
-        {
+        foreach ($data as $node_value) {
             $this->append(new Node($node_value));
         }
 
@@ -73,18 +93,17 @@ class LinkedList
     {
         print '[';
 
-        if (!$this->isEmpty())
-        {
+        if (!$this->empty()) {
             $current = $this->head;
             do {
-                print $current->getData().' ';
-            } while(!is_null($current = $current->getNext()));
+                print $current->getData() . ' ';
+            } while (!is_null($current = $current->getNext()));
         }
 
-        print ']'.PHP_EOL;
+        print ']' . PHP_EOL;
     }
 
-    public function isEmpty()
+    public function empty()
     {
         return is_null($this->head);
     }

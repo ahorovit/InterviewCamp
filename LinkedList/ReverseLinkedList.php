@@ -9,7 +9,7 @@ use InterviewCamp\LinkedList\Node;
 
 function reverse(LinkedList $input)
 {
-    if ($input->isEmpty()) {
+    if ($input->empty()) {
         return;
     }
     // set aside
