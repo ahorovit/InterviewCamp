@@ -18,12 +18,23 @@ class Stack
     public function pop()
     {
         $top = $this->list->getTail();
-        $this->list->delete($top);
-        return $top->getData();
+
+        if (is_null($top))
+        {
+            return null;
+        } else {
+            $this->list->delete($top);
+            return $top->getData();
+        }
     }
 
     public function peek()
     {
+        if ($this->list->empty())
+        {
+            return null;
+        }
+
         return $this->list->getTail()->getData();
     }
 
