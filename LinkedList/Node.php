@@ -36,11 +36,7 @@ class Node
 
     public function setPrev(?Node $prev)
     {
-        if (!is_null($prev)) {
-            $this->prev = $prev;
-            $prev->setNext($this);
-        }
-
+        $this->prev = $prev;
         return $this;
     }
 
@@ -52,11 +48,12 @@ class Node
 
     public function setNext(?Node $next): Node
     {
-        if (!is_null($next))
-        {
-            $this->next = $next;
+        $this->next = $next;
+
+        if (!is_null($next)) {
             $next->setPrev($this);
         }
+
         return $this;
     }
 }
