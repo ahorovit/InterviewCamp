@@ -10,6 +10,9 @@ class Node
     /** @var Node */
     protected $next;
 
+    /** @var Node */
+    protected $prev; // Doubly-linked list
+
     public function __construct($data, $next = null)
     {
         $this->data = $data;
@@ -26,6 +29,21 @@ class Node
         return $this->next;
     }
 
+    public function getPrev()
+    {
+        return $this->prev;
+    }
+
+    public function setPrev(?Node $prev)
+    {
+        if (!is_null($prev)) {
+            $this->prev = $prev;
+            $prev->setNext($this);
+        }
+
+        return $this;
+    }
+
     public function setData($data) : Node
     {
         $this->data = $data;
@@ -34,7 +52,11 @@ class Node
 
     public function setNext(?Node $next): Node
     {
-        $this->next = $next;
+        if (!is_null($next))
+        {
+            $this->next = $next;
+            $next->setPrev($this);
+        }
         return $this;
     }
 }
