@@ -40,12 +40,13 @@ class LinkedList
 
         if ($toDelete === $this->getTail()) {
             $this->setTail($prev);
-            $prev->setNext(null);
         }
 
         if (!is_null($prev)) {
             $prev->setNext($toDelete->getNext());
         }
+
+        $this->count--;
     }
 
     public function appendList(LinkedList $list): LinkedList
@@ -68,13 +69,13 @@ class LinkedList
         return $this->tail;
     }
 
-    public function setHead(Node $head): LinkedList
+    public function setHead(?Node $head): LinkedList
     {
         $this->head = $head;
         return $this;
     }
 
-    public function setTail(Node $tail): LinkedList
+    public function setTail(?Node $tail): LinkedList
     {
         $this->tail = $tail;
         return $this;

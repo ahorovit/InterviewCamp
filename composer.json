@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "InterviewCamp\\ArrayConcepts\\": "ArrayConcepts",
-            "InterviewCamp\\LinkedList\\": "LinkedList"
+            "InterviewCamp\\LinkedList\\": "LinkedList",
+            "InterviewCamp\\Stack\\": "Stack"
         }
     }
 }

@@ -10,6 +10,11 @@ class Stack
     /** @var LinkedList */
     protected $list;
 
+    public function __construct()
+    {
+        $this->list = new LinkedList();
+    }
+
     public function push($value)
     {
         $this->list->append(new Node($value));
@@ -19,8 +24,7 @@ class Stack
     {
         $top = $this->list->getTail();
 
-        if (is_null($top))
-        {
+        if (is_null($top)) {
             return null;
         } else {
             $this->list->delete($top);
