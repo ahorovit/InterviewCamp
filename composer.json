@@ -12,7 +12,8 @@
         "psr-4": {
             "InterviewCamp\\ArrayConcepts\\": "ArrayConcepts",
             "InterviewCamp\\LinkedList\\": "LinkedList",
-            "InterviewCamp\\Stack\\": "Stack"
+            "InterviewCamp\\Stack\\": "Stack",
+            "InterviewCamp\\DynamicProgramming\\": "DynamicProgramming"
         }
     }
 }
