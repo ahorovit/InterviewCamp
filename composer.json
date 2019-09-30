@@ -13,7 +13,8 @@
             "InterviewCamp\\ArrayConcepts\\": "ArrayConcepts",
             "InterviewCamp\\LinkedList\\": "LinkedList",
             "InterviewCamp\\Stack\\": "Stack",
-            "InterviewCamp\\DynamicProgramming\\": "DynamicProgramming"
+            "InterviewCamp\\DynamicProgramming\\": "DynamicProgramming",
+            "InterviewCamp\\Selection\\": "Selection"
         }
     }
 }
